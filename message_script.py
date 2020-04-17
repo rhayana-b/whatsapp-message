@@ -24,14 +24,14 @@ time.sleep(15)
 
 # (Automático) Pesquisa dos contatos no campo de busca
 
-contact = driver.find_element_by_css_selector("._3FeAD.uu8jX > ._3u328")
+contact = driver.find_element_by_css_selector("._3F6QL._3xlwb > ._2S1VP")
 
 for phone in contact_list:
     contact.send_keys(phone)
     time.sleep(2)
 
     try:
-        result = driver.find_element_by_css_selector(".X7YrQ[style*='z-index: 0'] span.matched-text._F7Vk")         
+        result = driver.find_element_by_css_selector("._2wP_Y[style*='z-index: 0'] span.matched-text._3FXB1")         
     except NoSuchElementException:
         print("{} não encontrado, verifique se o nome ou número do contato está correto".format(phone))
         contact.clear()
@@ -42,7 +42,7 @@ for phone in contact_list:
 
 # Inserir mensagem aqui na string
 
-    message = driver.find_element_by_css_selector("._3FeAD._1PRhq > ._3u328[contenteditable=true]")
+    message = driver.find_element_by_css_selector("._3F6QL._2WovP > ._2S1VP[contenteditable=true]")
     message.send_keys("#ping")
 
 # Envia mensagem
